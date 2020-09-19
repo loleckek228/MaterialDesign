@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MaterialDesign</string>
+    <string name="welcome_in_my_app">Welcome in my app!</string>
+    <string name="its_button">It\' button!</string>
+</resources>

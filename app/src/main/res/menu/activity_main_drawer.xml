@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_editText"
+            android:icon="@drawable/ic_edit_text"
+            android:title="@string/edit_text_title" />
+        <item
+            android:id="@+id/nav_snackbar"
+            android:icon="@drawable/ic_snackbar"
+            android:title="@string/snackbar_title" />
+        <item
+            android:id="@+id/nav_bottom_sheet"
+            android:icon="@drawable/ic_bottom_sheet"
+            android:title="@string/bottom_sheet_title" />
+
+        <item
+            android:id="@+id/nav_buttons"
+            android:icon="@drawable/ic_buttons"
+            android:title="@string/buttons_title" />
+
+        <item
+            android:id="@+id/nav_toolbar"
+            android:icon="@drawable/ic_toolbar"
+            android:title="@string/toolbar_title" />
+    </group>
+</menu>

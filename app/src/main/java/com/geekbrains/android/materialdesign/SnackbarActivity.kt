@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_snackbar.*
 class SnackbarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_snackbar)
 
         buttonSnackbarActivator.setOnClickListener {

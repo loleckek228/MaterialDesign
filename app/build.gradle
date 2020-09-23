@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.geekbrains.android.materialdesign"
-        minSdkVersion 18
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -32,6 +32,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
     implementation 'com.google.android.material:material:1.2.1'
+
+    implementation 'com.github.ajalt:timberkt:1.5.1'
 
     testImplementation 'junit:junit:4.13'
 

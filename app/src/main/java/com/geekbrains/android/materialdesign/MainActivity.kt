@@ -1,66 +1,86 @@
 package com.geekbrains.android.materialdesign
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import com.geekbrains.android.materialdesign.ui.*
+import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    private val fragmentManager: FragmentManager = supportFragmentManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
+
+        setSupportActionBar(toolbar)
+
+        initNavigationDrawer()
+
+        changeFragment(EditTextFragment())
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater: MenuInflater = menuInflater
+    private fun initNavigationDrawer() {
+        val toogle = ActionBarDrawerToggle(
+            this, drawer_layout, toolbar,
+            R.string.navigation_drawer_open, R.string.navigation_drawer_close
+        )
 
-        inflater.inflate(R.menu.main_menu, menu)
+        drawer_layout.addDrawerListener(toogle)
+        toogle.syncState()
 
+        nav_view.setNavigationItemSelectedListener(this)
+    }
+
+    override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        val itemId: Int = item.itemId
+
+        when (itemId) {
+            R.id.nav_editText -> {
+                changeFragment(EditTextFragment())
+            }
+
+            R.id.nav_snackbar -> {
+                changeFragment(SnackbarFragment())
+            }
+
+            R.id.nav_bottom_sheet -> {
+                changeFragment(BottomSheetFragment())
+            }
+
+            R.id.nav_buttons -> {
+                changeFragment(ButtonsFragment())
+            }
+
+            R.id.nav_toolbar -> {
+                changeFragment(ToolbarFragment())
+            }
+
+            else -> onNavigationItemSelected(item)
+        }
+
+        drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return handleMenuItem(item)
-    }
+    private fun changeFragment(fragment: Fragment) {
+        val fragmentTransaction = fragmentManager.beginTransaction()
 
-    private fun handleMenuItem(item: MenuItem): Boolean {
-        val itemId: Int = item.itemId
-
-        return when (itemId) {
-            R.id.editTextActivity -> {
-                val intent = Intent(this@MainActivity, EditTextActivity::class.java)
-                startActivity(intent)
-                true
-            }
-
-            R.id.snackbarActivity -> {
-                val intent = Intent(this@MainActivity, SnackbarActivity::class.java)
-                startActivity(intent)
-                true
-            }
-
-            R.id.bottomSheetActivity -> {
-                val intent = Intent(this@MainActivity, BottomSheetActivity::class.java)
-                startActivity(intent)
-                true
-            }
-
-            R.id.buttonsActivity -> {
-                val intent = Intent(this@MainActivity, ButtonsActivity::class.java)
-                startActivity(intent)
-                true
-            }
-
-            R.id.toolbarActivity -> {
-                val intent = Intent(this@MainActivity, ToolbarActivity::class.java)
-                startActivity(intent)
-                true
-            }
-
-            else -> super.onOptionsItemSelected(item)
-        }
+        fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+        fragmentTransaction.commit()
     }
 }

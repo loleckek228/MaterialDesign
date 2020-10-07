@@ -1,5 +1,6 @@
 package com.geekbrains.android.materialdesign
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -11,6 +12,7 @@ import com.geekbrains.android.materialdesign.ui.*
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.fragment_toolbar.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val fragmentManager: FragmentManager = supportFragmentManager
@@ -68,6 +70,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.nav_toolbar -> {
                 changeFragment(ToolbarFragment())
+            }
+
+            R.id.nav_collapsing -> {
+                changeFragment(CollapsingFragment())
+            }
+
+            R.id.nav_fab -> {
+                changeFragment(FabFragment())
             }
 
             else -> onNavigationItemSelected(item)

@@ -26,5 +26,15 @@
             android:id="@+id/nav_toolbar"
             android:icon="@drawable/ic_toolbar"
             android:title="@string/toolbar_title" />
+
+        <item
+            android:id="@+id/nav_collapsing"
+            android:icon="@drawable/ic_toolbar"
+            android:title="@string/collapsing_title" />
+
+        <item
+            android:id="@+id/nav_fab"
+            android:icon="@drawable/ic_toolbar"
+            android:title="@string/fab_title" />
     </group>
 </menu>

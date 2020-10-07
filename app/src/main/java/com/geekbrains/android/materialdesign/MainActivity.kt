@@ -10,6 +10,7 @@ import android.view.MenuItem
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
     }
 
@@ -43,6 +44,18 @@ class MainActivity : AppCompatActivity() {
 
             R.id.bottomSheetActivity -> {
                 val intent = Intent(this@MainActivity, BottomSheetActivity::class.java)
+                startActivity(intent)
+                true
+            }
+
+            R.id.buttonsActivity -> {
+                val intent = Intent(this@MainActivity, ButtonsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+
+            R.id.toolbarActivity -> {
+                val intent = Intent(this@MainActivity, ToolbarActivity::class.java)
                 startActivity(intent)
                 true
             }

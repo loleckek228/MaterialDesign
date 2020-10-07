@@ -18,6 +18,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/enter_text" />
-    </com.google.android.material.textfield.TextInputLayout>
 
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

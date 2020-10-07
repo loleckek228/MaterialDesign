@@ -10,4 +10,10 @@
     <string name="edit_text">EditText</string>
     <string name="bottom_sheet">Bottom-Sheet</string>
     <string name="it_s_info_in_bottom_sheet">It\'s info in bottom-sheet</string>
+    <string name="buttons">Buttons</string>
+    <string name="text_flat_button">Text Flat Button</string>
+    <string name="outlined_flat_button">Outlined Flat Button</string>
+    <string name="raised_button">Raised Button</string>
+    <string name="raised_button_background">Raised Button Background</string>
+    <string name="toolbar">Toolbar</string>
 </resources>

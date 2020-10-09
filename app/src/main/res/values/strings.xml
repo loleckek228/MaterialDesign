@@ -26,6 +26,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="collapsing_title">Collapsing</string>
     <string name="fab_title">Fab</string>
+    <string name="show_image">Show Image</string>
+    <string name="recycler_view_title">Recycler View</string>
     <string name="testudines_text">Черепа́хи (лат. Testudines) — один из четырёх современных отрядов
         пресмыкающихся. Содержит около 328 современных видов, группируемых в 14 семейств и два
         подотряда[1]Перейти к разделу «#Классификация». Ископаемые остатки черепах прослеживаются
@@ -44,6 +46,6 @@
         Также многие виды черепах находятся под угрозой вымирания разной степени и охраняются
         Перейти к разделу «#Охранный статус». Черепаха является распространённым символом
         в культуре многих народовПерейти к разделу «#В культуре и искусстве».</string>
-    <string name="show_image">Show Image</string>
+
 
 </resources>

@@ -7,9 +7,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.geekbrains.android.materialdesign.ui.*
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -89,6 +87,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.nav_bottom_navigation_view -> {
                 val intent = Intent(this@MainActivity, BottomNavigationActivity::class.java)
+                startActivity(intent)
+            }
+
+            R.id.nav_style -> {
+                replaceFragment(StyleFragment())
+            }
+
+            R.id.nav_theme -> {
+                val intent = Intent(this@MainActivity, ThemeActivity::class.java)
                 startActivity(intent)
             }
 

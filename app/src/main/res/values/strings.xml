@@ -48,4 +48,6 @@
         в культуре многих народовПерейти к разделу «#В культуре и искусстве».</string>
     <string name="tab_title">Tabs</string>
     <string name="bottom_navigation_title">Bottom Navigation View</string>
+    <string name="style_title">Style</string>
+    <string name="theme_title">Theme</string>
 </resources>

@@ -9,23 +9,22 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.geekbrains.android.materialdesign.ui.*
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
-import kotlinx.android.synthetic.main.fragment_toolbar.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    private val fragmentManager: FragmentManager = supportFragmentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
+        setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
         initNavigationDrawer()
 
-        changeFragment(EditTextFragment())
+        replaceFragment(EditTextFragment())
     }
 
     private fun initNavigationDrawer() {
@@ -53,35 +52,44 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         when (itemId) {
             R.id.nav_editText -> {
-                changeFragment(EditTextFragment())
+                replaceFragment(EditTextFragment())
             }
 
             R.id.nav_snackbar -> {
-                changeFragment(SnackbarFragment())
+                replaceFragment(SnackbarFragment())
             }
 
             R.id.nav_bottom_sheet -> {
-                changeFragment(BottomSheetFragment())
+                replaceFragment(BottomSheetFragment())
             }
 
             R.id.nav_buttons -> {
-                changeFragment(ButtonsFragment())
+                replaceFragment(ButtonsFragment())
             }
 
             R.id.nav_toolbar -> {
-                changeFragment(ToolbarFragment())
+                replaceFragment(ToolbarFragment())
             }
 
             R.id.nav_collapsing -> {
-                changeFragment(CollapsingFragment())
+                replaceFragment(CollapsingFragment())
             }
 
             R.id.nav_fab -> {
-                changeFragment(FabFragment())
+                replaceFragment(FabFragment())
             }
 
             R.id.nav_recycler_view -> {
-                changeFragment(RecyclerViewFragment())
+                replaceFragment(RecyclerViewFragment())
+            }
+
+            R.id.nav_tab -> {
+                replaceFragment(TabFragment())
+            }
+
+            R.id.nav_bottom_navigation_view -> {
+                val intent = Intent(this@MainActivity, BottomNavigationActivity::class.java)
+                startActivity(intent)
             }
 
             else -> onNavigationItemSelected(item)
@@ -91,10 +99,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    private fun changeFragment(fragment: Fragment) {
-        val fragmentTransaction = fragmentManager.beginTransaction()
-
-        fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-        fragmentTransaction.commit()
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.nav_host_fragment, fragment)
+            .commit()
     }
 }

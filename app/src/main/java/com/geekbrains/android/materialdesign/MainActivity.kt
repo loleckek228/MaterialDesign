@@ -80,6 +80,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 changeFragment(FabFragment())
             }
 
+            R.id.nav_recycler_view -> {
+                changeFragment(RecyclerViewFragment())
+            }
+
             else -> onNavigationItemSelected(item)
         }
 

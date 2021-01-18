@@ -41,5 +41,15 @@
             android:id="@+id/nav_recycler_view"
             android:icon="@drawable/ic_recycler_view"
             android:title="@string/recycler_view_title" />
+
+        <item
+            android:id="@+id/nav_tab"
+            android:icon="@drawable/ic_tab"
+            android:title="@string/tab_title" />
+
+        <item
+            android:id="@+id/nav_bottom_navigation_view"
+            android:icon="@drawable/ic_bottom_navigation"
+            android:title="@string/bottom_navigation_title" />
     </group>
 </menu>

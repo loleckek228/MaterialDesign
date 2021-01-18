@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.geekbrains.android.materialdesign.R
+import kotlinx.android.synthetic.main.fragment_collapsing.*
 import kotlinx.android.synthetic.main.fragment_toolbar.*
 
 class ToolbarFragment : Fragment() {

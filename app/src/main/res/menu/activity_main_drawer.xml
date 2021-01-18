@@ -51,5 +51,15 @@
             android:id="@+id/nav_bottom_navigation_view"
             android:icon="@drawable/ic_bottom_navigation"
             android:title="@string/bottom_navigation_title" />
+
+        <item
+            android:id="@+id/nav_style"
+            android:icon="@drawable/ic_style"
+            android:title="@string/style_title" />
+
+        <item
+            android:id="@+id/nav_theme"
+            android:icon="@drawable/ic_theme"
+            android:title="@string/theme_title" />
     </group>
 </menu>

@@ -20,5 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".BottomNavigationActivity" />
+        <activity android:name=".ui.ThemeActivity" />
     </application>
 </manifest>
